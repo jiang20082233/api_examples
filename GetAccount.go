@@ -7,6 +7,7 @@ import (
 	"net/http"
 	//"github.com/nntaoli/crypto_coin_api/okcoin"
 	. "github.com/nntaoli/crypto_coin_api"
+	//"github.com/nntaoli/crypto_coin_api/builder"
 )
 
 func main() {
@@ -16,6 +17,9 @@ func main() {
 
 	//New Huobi API
 	api := huobi.New(http.DefaultClient, accessKey, secretKey)
+
+	//_api := builder.NewAPIBuilder().APIKey(accessKey).APISecretkey(secretKey).Build("huobi.com") //用Builder构建对应交易所的API接口实例
+
 	//api := okcoin.New(http.DefaultClient , accessKey , secretKey) //New OKCoin.cn API
 	//api := okcoin.NewFuture(http.DefaultClient , accessKey , secretKey) //New OKCoin Future API
 
